@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="KingTori Scents — Luxury and mid-range fragrances curated for the discerning. Lagos-based, nationwide delivery." />
+<meta property="og:title" content="KingTori Scents" />
+<meta property="og:description" content="Wear the Scent of Royalty. Curated luxury fragrances in Lagos, Nigeria." />
+<title>KingTori Scents</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #FAF8F4;
+    --off-white: #F3F0EA;
+    --light-stone: #E8E2D8;
+    --stone: #B8B0A0;
+    --dark: #1A1814;
+    --mid: #6B6560;
+    --accent: #C4A97D;
+    --accent-dark: #9E7E50;
+    --white: #FFFFFF;
+    --serif: 'Cormorant Garamond', serif;
+    --sans: 'DM Sans', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--dark);
+    font-size: 15px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5vw;
+    height: 68px;
+    background: rgba(250,248,244,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--light-stone);
+  }
+
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: var(--dark);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--accent-dark); font-style: italic; }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--mid);
+    transition: color 0.25s;
+  }
+
+  .nav-links a:hover { color: var(--dark); }
+
+  .nav-cta {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    background: var(--dark);
+    color: var(--white);
+    padding: 10px 22px;
+    text-decoration: none;
+    transition: background 0.25s;
+  }
+
+  .nav-cta:hover { background: var(--accent-dark); }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 68px;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8vw 6vw 8vw 8vw;
+    position: relative;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+    margin-bottom: 28px;
+  }
+
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(52px, 6vw, 86px);
+    font-weight: 300;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    color: var(--dark);
+    margin-bottom: 28px;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--accent-dark);
+  }
+
+  .hero-subtitle {
+    font-size: 15px;
+    color: var(--mid);
+    max-width: 360px;
+    line-height: 1.75;
+    margin-bottom: 44px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .btn-primary {
+    background: var(--dark);
+    color: var(--white);
+    padding: 14px 32px;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.25s;
+  }
+
+  .btn-primary:hover { background: var(--accent-dark); }
+
+  .btn-ghost {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 1px solid var(--stone);
+    transition: color 0.25s, border-color 0.25s;
+  }
+
+  .btn-ghost:hover { color: var(--dark); border-color: var(--dark); }
+
+  .hero-right {
+    position: relative;
+    background: var(--off-white);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-visual {
+    position: relative;
+    width: 340px;
+    height: 480px;
+  }
+
+  .hero-bottle {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .bottle-svg { width: 200px; opacity: 0.92; }
+
+  .hero-tag {
+    position: absolute;
+    bottom: 40px;
+    left: 30px;
+    background: var(--white);
+    padding: 16px 20px;
+    border-left: 2px solid var(--accent);
+  }
+
+  .hero-tag p:first-child {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: 4px;
+  }
+
+  .hero-tag p:last-child {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--dark);
+  }
+
+  .hero-stat {
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    text-align: right;
+  }
+
+  .hero-stat .num {
+    font-family: var(--serif);
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--dark);
+    line-height: 1;
+  }
+
+  .hero-stat .label {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--stone);
+  }
+
+  /* SECTION COMMON */
+  section { padding: 100px 8vw; }
+
+  .section-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: var(--serif);
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--dark);
+    margin-bottom: 20px;
+  }
+
+  .section-title em { font-style: italic; color: var(--accent-dark); }
+
+  .section-body {
+    font-size: 15px;
+    color: var(--mid);
+    max-width: 500px;
+    line-height: 1.8;
+  }
+
+  /* FEATURED FRAGRANCES */
+  #fragrances { background: var(--white); }
+
+  .frag-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 56px;
+  }
+
+  .frag-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+
+  .frag-card {
+    background: var(--off-white);
+    padding: 40px 32px 32px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s;
+    overflow: hidden;
+  }
+
+  .frag-card:hover { background: var(--cream); }
+
+  .frag-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+  }
+
+  .frag-card:hover::before { transform: scaleX(1); }
+
+  .frag-number {
+    font-family: var(--serif);
+    font-size: 13px;
+    color: var(--stone);
+    margin-bottom: 32px;
+    letter-spacing: 0.1em;
+  }
+
+  .frag-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 24px;
+    opacity: 0.8;
+  }
+
+  .frag-name {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--dark);
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .frag-family {
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent-dark);
+    margin-bottom: 16px;
+  }
+
+  .frag-desc {
+    font-size: 13px;
+    color: var(--mid);
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+
+  .frag-price {
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--dark);
+  }
+
+  .frag-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--dark);
+    color: var(--white);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+  }
+
+  /* ABOUT */
+  #about {
+    background: var(--dark);
+    color: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  #about .section-eyebrow { color: var(--accent); }
+  #about .section-title { color: var(--white); }
+  #about .section-body { color: rgba(255,255,255,0.55); max-width: 100%; }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    margin-top: 48px;
+  }
+
+  .about-stat {
+    background: rgba(255,255,255,0.05);
+    padding: 28px 24px;
+    border-left: 1px solid rgba(196,169,125,0.25);
+  }
+
+  .about-stat .num {
+    font-family: var(--serif);
+    font-size: 42px;
+    font-weight: 300;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .about-stat .lbl {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .about-visual {
+    position: relative;
+    height: 500px;
+  }
+
+  .about-visual-inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .about-quote {
+    text-align: center;
+    padding: 40px;
+  }
+
+  .about-quote blockquote {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+
+  .about-quote cite {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-style: normal;
+  }
+
+  /* COLLECTION / SHOP */
+  #shop { background: var(--cream); }
+
+  .shop-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 56px;
+  }
+
+  .shop-filters {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 8px 18px;
+    border: 1px solid var(--light-stone);
+    background: transparent;
+    color: var(--mid);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: var(--sans);
+  }
+
+  .filter-btn:hover, .filter-btn.active {
+    background: var(--dark);
+    border-color: var(--dark);
+    color: var(--white);
+  }
+
+  .shop-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .shop-item { cursor: pointer; }
+
+  .shop-item-img {
+    background: var(--off-white);
+    aspect-ratio: 3/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .shop-item:hover .shop-item-img { background: var(--light-stone); }
+
+  .shop-item-img svg { width: 90px; opacity: 0.7; transition: transform 0.4s, opacity 0.3s; }
+  .shop-item:hover .shop-item-img svg { transform: scale(1.06); opacity: 0.9; }
+
+  .shop-item-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: var(--dark);
+    color: var(--white);
+    text-align: center;
+    padding: 12px;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+  }
+
+  .shop-item:hover .shop-item-overlay { transform: translateY(0); }
+
+  .shop-item-name {
+    font-family: var(--serif);
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--dark);
+    margin-bottom: 4px;
+  }
+
+  .shop-item-notes {
+    font-size: 12px;
+    color: var(--stone);
+    margin-bottom: 8px;
+  }
+
+  .shop-item-price {
+    font-family: var(--serif);
+    font-size: 17px;
+    color: var(--dark);
+  }
+
+  /* CONTACT */
+  #contact {
+    background: var(--off-white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .contact-form { display: flex; flex-direction: column; gap: 20px; }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .form-group { display: flex; flex-direction: column; gap: 8px; }
+
+  .form-group label {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--mid);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: var(--white);
+    border: 1px solid var(--light-stone);
+    padding: 12px 16px;
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--dark);
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+    border-radius: 0;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--accent-dark); }
+
+  .form-group textarea { resize: vertical; min-height: 100px; }
+
+  .form-submit {
+    background: var(--dark);
+    color: var(--white);
+    border: none;
+    padding: 15px 36px;
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background 0.25s;
+  }
+
+  .form-submit:hover { background: var(--accent-dark); }
+
+  .contact-info { padding-top: 8px; }
+
+  .contact-info .section-body { margin-bottom: 40px; }
+
+  .contact-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 16px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--light-stone);
+  }
+
+  .contact-item:last-child { border-bottom: none; }
+
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--white);
+    border: 1px solid var(--light-stone);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 16px;
+  }
+
+  .contact-item-label {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: 4px;
+  }
+
+  .contact-item-value {
+    font-size: 14px;
+    color: var(--dark);
+  }
+
+  /* DIVIDER */
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: var(--accent);
+    margin: 24px 0;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.4);
+    padding: 60px 8vw 40px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    margin-bottom: 32px;
+  }
+
+  .footer-logo {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--white);
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+
+  .footer-logo span { color: var(--accent); font-style: italic; }
+
+  .footer-tagline {
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.35);
+    max-width: 220px;
+  }
+
+  .footer-col h4 {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 20px;
+  }
+
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+  .footer-col ul a {
+    text-decoration: none;
+    font-size: 13px;
+    color: rgba(255,255,255,0.35);
+    transition: color 0.2s;
+  }
+
+  .footer-col ul a:hover { color: rgba(255,255,255,0.8); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+  }
+
+  .social-links { display: flex; gap: 16px; }
+
+  .social-links a {
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    transition: color 0.2s;
+  }
+
+  .social-links a:hover { color: var(--accent); }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    #hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-right { height: 400px; }
+    #about { grid-template-columns: 1fr; gap: 48px; }
+    .about-visual { height: 280px; }
+    #contact { grid-template-columns: 1fr; gap: 48px; }
+    .frag-grid { grid-template-columns: 1fr; }
+    .shop-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-top { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+  }
+
+  @media (max-width: 600px) {
+    section { padding: 64px 6vw; }
+    .shop-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-row { grid-template-columns: 1fr; }
+    .about-stats { grid-template-columns: 1fr 1fr; }
+    .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#hero" class="nav-logo">KingTori <span>Scents</span></a>
+  <ul class="nav-links">
+    <li><a href="#fragrances">Fragrances</a></li>
+    <li><a href="#about">Our Story</a></li>
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#shop" class="nav-cta">Shop Now</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Lagos-born · World-class Fragrance</p>
+    <h1 class="hero-title">Wear the<br><em>Scent</em> of<br>Royalty.</h1>
+    <p class="hero-subtitle">Curated luxury and mid-range fragrances for the discerning. Every bottle tells a story — yours begins here.</p>
+    <div class="hero-actions">
+      <a href="#shop" class="btn-primary">Explore Collection</a>
+      <a href="#about" class="btn-ghost">Our Story</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="hero-bottle">
+        <svg class="bottle-svg" viewBox="0 0 160 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="62" y="12" width="36" height="18" rx="4" fill="#C4A97D" opacity="0.3"/>
+          <rect x="68" y="8" width="24" height="8" rx="3" fill="#9E7E50" opacity="0.5"/>
+          <rect x="72" y="4" width="16" height="6" rx="2" fill="#9E7E50" opacity="0.7"/>
+          <path d="M45 48 Q45 30 80 30 Q115 30 115 48 L120 80 L120 240 Q120 252 108 252 L52 252 Q40 252 40 240 L40 80 Z" fill="#F3F0EA" stroke="#C4A97D" stroke-width="1.5"/>
+          <path d="M45 48 Q45 30 80 30 Q115 30 115 48 L120 80 L40 80 Z" fill="#C4A97D" opacity="0.15"/>
+          <rect x="48" y="110" width="64" height="1" fill="#C4A97D" opacity="0.3"/>
+          <rect x="48" y="200" width="64" height="1" fill="#C4A97D" opacity="0.3"/>
+          <text x="80" y="148" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="11" fill="#1A1814" opacity="0.7" letter-spacing="2">KINGTORI</text>
+          <text x="80" y="163" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="8" fill="#9E7E50" letter-spacing="3">SCENTS</text>
+          <ellipse cx="80" cy="80" rx="35" ry="6" fill="#E8E2D8" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="hero-stat">
+        <div class="num">50+</div>
+        <div class="label">Fragrances</div>
+      </div>
+      <div class="hero-tag">
+        <p>New Arrival</p>
+        <p>Midnight Amber</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED FRAGRANCES -->
+<section id="fragrances">
+  <div class="frag-header">
+    <div>
+      <p class="section-eyebrow">Signature Collection</p>
+      <h2 class="section-title">Featured <em>Fragrances</em></h2>
+    </div>
+    <a href="#shop" class="btn-ghost">View All</a>
+  </div>
+  <div class="frag-grid">
+
+    <div class="frag-card">
+      <div class="frag-badge">Best Seller</div>
+      <p class="frag-number">01</p>
+      <svg class="frag-icon" viewBox="0 0 64 64" fill="none">
+        <circle cx="32" cy="32" r="22" stroke="#C4A97D" stroke-width="1"/>
+        <circle cx="32" cy="32" r="14" fill="#C4A97D" opacity="0.12"/>
+        <path d="M24 32 Q32 18 40 32 Q32 46 24 32Z" fill="#9E7E50" opacity="0.4"/>
+      </svg>
+      <h3 class="frag-name">Amber Dusk</h3>
+      <p class="frag-family">Oriental · Woody</p>
+      <p class="frag-desc">Warm amber and oud wood open into a heart of sandalwood and vanilla — a deeply seductive evening wear.</p>
+      <p class="frag-price">₦18,500</p>
+    </div>
+
+    <div class="frag-card">
+      <p class="frag-number">02</p>
+      <svg class="frag-icon" viewBox="0 0 64 64" fill="none">
+        <path d="M32 10 Q20 20 18 34 Q20 48 32 54 Q44 48 46 34 Q44 20 32 10Z" stroke="#C4A97D" stroke-width="1" fill="#C4A97D" opacity="0.1"/>
+        <line x1="32" y1="10" x2="32" y2="54" stroke="#9E7E50" stroke-width="0.8" opacity="0.5"/>
+        <line x1="18" y1="34" x2="46" y2="34" stroke="#9E7E50" stroke-width="0.8" opacity="0.5"/>
+      </svg>
+      <h3 class="frag-name">Lagos Bloom</h3>
+      <p class="frag-family">Floral · Fresh</p>
+      <p class="frag-desc">A bright bouquet of jasmine and white rose, anchored by musk and light cedarwood. Joyful and effortless.</p>
+      <p class="frag-price">₦14,000</p>
+    </div>
+
+    <div class="frag-card">
+      <div class="frag-badge">New</div>
+      <p class="frag-number">03</p>
+      <svg class="frag-icon" viewBox="0 0 64 64" fill="none">
+        <rect x="18" y="18" width="28" height="28" stroke="#C4A97D" stroke-width="1" fill="none"/>
+        <rect x="24" y="24" width="16" height="16" fill="#C4A97D" opacity="0.2"/>
+        <path d="M18 18 L32 10 L46 18" stroke="#9E7E50" stroke-width="0.8" fill="none" opacity="0.6"/>
+      </svg>
+      <h3 class="frag-name">Royal Oud</h3>
+      <p class="frag-family">Woody · Resinous</p>
+      <p class="frag-desc">Pure agarwood aged to perfection, lifted by bergamot and grounded in rich earthy patchouli. A statement scent.</p>
+      <p class="frag-price">₦26,000</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div>
+    <p class="section-eyebrow">Our Story</p>
+    <h2 class="section-title">Fragrance is<br><em>memory</em><br>made tangible.</h2>
+    <div class="divider"></div>
+    <p class="section-body">KingTori Scents was born from a simple belief: that every person deserves to carry a signature that commands attention. We source the finest fragrances — from the souks of Dubai to the perfumeries of Paris — and bring them to your doorstep in Lagos.</p>
+    <p class="section-body" style="margin-top:16px;">Our collection spans bold orientals, airy florals, and deep woody accords. Whatever your story, we have the scent that tells it.</p>
+    <div class="about-stats">
+      <div class="about-stat"><div class="num">50+</div><div class="lbl">Fragrances</div></div>
+      <div class="about-stat"><div class="num">3K+</div><div class="lbl">Happy Clients</div></div>
+      <div class="about-stat"><div class="num">100%</div><div class="lbl">Authentic</div></div>
+      <div class="about-stat"><div class="num">24h</div><div class="lbl">Lagos Delivery</div></div>
+    </div>
+  </div>
+  <div class="about-visual">
+    <div class="about-visual-inner">
+      <div class="about-quote">
+        <blockquote>"A fragrance is the invisible part of your personality."</blockquote>
+        <cite>KingTori Scents — Lagos, Nigeria</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOP -->
+<section id="shop">
+  <div class="shop-header">
+    <div>
+      <p class="section-eyebrow">The Full Collection</p>
+      <h2 class="section-title">Shop <em>All</em> Scents</h2>
+    </div>
+  </div>
+  <div class="shop-filters">
+    <button class="filter-btn active" onclick="filterScents(this, 'all')">All</button>
+    <button class="filter-btn" onclick="filterScents(this, 'oriental')">Oriental</button>
+    <button class="filter-btn" onclick="filterScents(this, 'floral')">Floral</button>
+    <button class="filter-btn" onclick="filterScents(this, 'woody')">Woody</button>
+    <button class="filter-btn" onclick="filterScents(this, 'fresh')">Fresh</button>
+    <button class="filter-btn" onclick="filterScents(this, 'unisex')">Unisex</button>
+  </div>
+  <div class="shop-grid" id="shopGrid">
+
+    <div class="shop-item" data-category="oriental woody">
+      <div class="shop-item-img">
+        <svg viewBox="0 0 100 140" fill="none"><rect x="38" y="8" width="24" height="12" rx="3" fill="#C4A97D" opacity="0.4"/><rect x="28" y="22" width="44" height="108" rx="4" fill="#F3F0EA" stroke="#C4A97D" stroke-width="1"/><rect x="35" y="55" width="30" height="1" fill="#C4A97D" opacity="0.4"/><text x="50" y="76" text-anchor="middle" font-family="serif" font-size="7" fill="#1A1814" opacity="0.6" letter-spacing="1">KINGTORI</text></svg>
+        <div class="shop-item-overlay">Add to Cart</div>
+      </div>
+      <p class="shop-item-name">Amber Dusk</p>
+      <p class="shop-item-notes">Amber · Oud · Sandalwood</p>
+      <p class="shop-item-price">₦18,500</p>
+    </div>
+
+    <div class="shop-item" data-category="floral fresh">
+      <div class="shop-item-img">
+        <svg viewBox="0 0 100 140" fill="none"><rect x="42" y="6" width="16" height="16" rx="2" fill="#C4A97D" opacity="0.3"/><path d="M22 32 Q22 22 50 22 Q78 22 78 32 L80 128 Q80 136 72 136 L28 136 Q20 136 20 128 Z" fill="#FAF8F4" stroke="#C4A97D" stroke-width="1"/><text x="50" y="85" text-anchor="middle" font-family="serif" font-size="7" fill="#1A1814" opacity="0.6" letter-spacing="1">KINGTORI</text></svg>
+        <div class="shop-item-overlay">Add to Cart</div>
+      </div>
+      <p class="shop-item-name">Lagos Bloom</p>
+      <p class="shop-item-notes">Jasmine · Rose · Musk</p>
+      <p class="shop-item-price">₦14,000</p>
+    </div>
+
+    <div class="shop-item" data-category="woody oriental">
+      <div class="shop-item-img">
+        <svg viewBox="0 0 100 140" fill="none"><rect x="40" y="5" width="20" height="18" rx="3" fill="#9E7E50" opacity="0.4"/><rect x="25" y="24" width="50" height="106" rx="6" fill="#F3F0EA" stroke="#C4A97D" stroke-width="1"/><rect x="32" y="50" width="36" height="1" fill="#C4A97D" opacity="0.35"/><text x="50" y="80" text-anchor="middle" font-family="serif" font-size="7" fill="#1A1814" opacity="0.6" letter-spacing="1">KINGTORI</text></svg>
+        <div class="shop-item-overlay">Add to Cart</div>
+      </div>
+      <p class="shop-item-name">Royal Oud</p>
+      <p class="shop-item-notes">Oud · Bergamot · Patchouli</p>
+      <p class="shop-item-price">₦26,000</p>
+    </div>
+
+    <div class="shop-item" data-category="woody unisex">
+      <div class="shop-item-img">
+        <svg viewBox="0 0 100 140" fill="none"><rect x="43" y="8" width="14" height="14" rx="7" fill="#C4A97D" opacity="0.5"/><rect x="30" y="24" width="40" height="108" rx="3" fill="#FAF8F4" stroke="#C4A97D" stroke-width="1"/><rect x="36" y="60" width="28" height="1" fill="#C4A97D" opacity="0.4"/><text x="50" y="85" text-anchor="middle" font-family="serif" font-size="7" fill="#1A1814" opacity="0.6" letter-spacing="1">KINGTORI</text></svg>
+        <div class="shop-item-overlay">Add to Cart</div>
+      </div>
+      <p class="shop-item-name">Midnight Cedar</p>
+      <p class="shop-item-notes">Cedar · Vetiver · Musk</p>
+      <p class="shop-item-price">₦16,500</p>
+    </div>
+
+    <div class="shop-item" data-category="fresh unisex">
+      <div class="shop-item-img">
+        <svg viewBox="0 0 100 140" fill="none"><rect x="38" y="6" width="24" height="10" rx="2" fill="#C4A97D" opacity="0.35"/><rect x="26" y="18" width="48" height="112" rx="5" fill="#F3F0EA" stroke="#C4A97D" stroke-width="1"/><text x="50" y="82" text-anchor="middle" font-family="serif" font-size="7" fill="#1A1814" opacity="0.6" letter-spacing="1">KINGTORI</text></svg>
+        <div class="shop-item-overlay">Add to Cart</div>
+      </div>
+      <p class="shop-item-name">Aqua Verde</p>
+      <p class="shop-item-notes">Citrus · Green Tea · Mint</p>
+      <p class="shop-item-price">₦12,000</p>
+    </div>
+
+    <div class="shop-item" data-category="floral unisex">
+      <div class="shop-item-img">
+        <svg viewBox="0 0 100 140" fill="none"><rect x="44" y="5" width="12" height="20" rx="4" fill="#9E7E50" opacity="0.5"/><rect x="28" y="26" width="44" height="104" rx="4" fill="#FAF8F4" stroke="#C4A97D" stroke-width="1"/><text x="50" y="80" text-anchor="middle" font-family="serif" font-size="7" fill="#1A1814" opacity="0.6" letter-spacing="1">KINGTORI</text></svg>
+        <div class="shop-item-overlay">Add to Cart</div>
+      </div>
+      <p class="shop-item-name">Velvet Rose</p>
+      <p class="shop-item-notes">Rose · Oud · Vanilla</p>
+      <p class="shop-item-price">₦20,000</p>
+    </div>
+
+    <div class="shop-item" data-category="oriental">
+      <div class="shop-item-img">
+        <svg viewBox="0 0 100 140" fill="none"><rect x="40" y="8" width="20" height="14" rx="3" fill="#C4A97D" opacity="0.4"/><rect x="24" y="24" width="52" height="106" rx="3" fill="#F3F0EA" stroke="#C4A97D" stroke-width="1"/><rect x="30" y="56" width="40" height="1" fill="#C4A97D" opacity="0.35"/><text x="50" y="82" text-anchor="middle" font-family="serif" font-size="7" fill="#1A1814" opacity="0.6" letter-spacing="1">KINGTORI</text></svg>
+        <div class="shop-item-overlay">Add to Cart</div>
+      </div>
+      <p class="shop-item-name">Spiced Noir</p>
+      <p class="shop-item-notes">Black Pepper · Tobacco · Musk</p>
+      <p class="shop-item-price">₦22,500</p>
+    </div>
+
+    <div class="shop-item" data-category="woody fresh">
+      <div class="shop-item-img">
+        <svg viewBox="0 0 100 140" fill="none"><rect x="41" y="5" width="18" height="18" rx="9" fill="#C4A97D" opacity="0.3"/><rect x="29" y="24" width="42" height="108" rx="4" fill="#FAF8F4" stroke="#C4A97D" stroke-width="1"/><text x="50" y="82" text-anchor="middle" font-family="serif" font-size="7" fill="#1A1814" opacity="0.6" letter-spacing="1">KINGTORI</text></svg>
+        <div class="shop-item-overlay">Add to Cart</div>
+      </div>
+      <p class="shop-item-name">Forest Dew</p>
+      <p class="shop-item-notes">Sandalwood · Eucalyptus · Moss</p>
+      <p class="shop-item-price">₦15,000</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-info">
+    <p class="section-eyebrow">Get in Touch</p>
+    <h2 class="section-title">Order &<br><em>Enquiries</em></h2>
+    <div class="divider"></div>
+    <p class="section-body">Have a question about a fragrance, or ready to place an order? Reach us on WhatsApp, Instagram, or fill out the form — we respond within the hour.</p>
+    <div class="contact-detail" style="margin-top:40px;">
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <p class="contact-item-label">Location</p>
+          <p class="contact-item-value">Lagos, Nigeria · Nationwide Delivery</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📱</div>
+        <div>
+          <p class="contact-item-label">WhatsApp / Phone</p>
+          <p class="contact-item-value">+234 701 390 2651</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">✉️</div>
+        <div>
+          <p class="contact-item-label">Email</p>
+          <p class="contact-item-value">kingtorigroup@gmail.com</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📸</div>
+        <div>
+          <p class="contact-item-label">Instagram</p>
+          <p class="contact-item-value">@kingtori_scents</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <p class="section-eyebrow" style="margin-bottom:24px;">Send a Message</p>
+    <div class="contact-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="Tori" />
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="King" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="you@example.com" />
+      </div>
+      <div class="form-group">
+        <label>Phone / WhatsApp</label>
+        <input type="tel" placeholder="+234 701 390 2651" />
+      </div>
+      <div class="form-group">
+        <label>I'm Interested In</label>
+        <select>
+          <option>A specific fragrance</option>
+          <option>A gift set</option>
+          <option>Bulk / wholesale order</option>
+          <option>General enquiry</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Tell us what you're looking for..."></textarea>
+      </div>
+      <button class="form-submit">Send Message</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">KingTori <span>Scents</span></div>
+      <p class="footer-tagline">Luxury and mid-range fragrances, curated for the discerning. Lagos-based, nationwide delivery.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="#shop">All Fragrances</a></li>
+        <li><a href="#fragrances">New Arrivals</a></li>
+        <li><a href="#shop">Best Sellers</a></li>
+        <li><a href="#shop">Gift Sets</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact">Wholesale</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Follow Us</h4>
+      <ul>
+        <li><a href="https://instagram.com/kingtori_scents" target="_blank">Instagram</a></li>
+        <li><a href="https://tiktok.com/@kingtori_of_lagos" target="_blank">TikTok</a></li>
+        <li><a href="https://wa.me/2347013902651" target="_blank">WhatsApp</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 KingTori Scents. All rights reserved.</span>
+    <div class="social-links">
+      <a href="https://instagram.com/kingtori_scents" target="_blank">Instagram</a>
+      <a href="https://tiktok.com/@kingtori_of_lagos" target="_blank">TikTok</a>
+      <a href="https://wa.me/2347013902651" target="_blank">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function filterScents(btn, category) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.shop-item').forEach(item => {
+      if (category === 'all' || item.dataset.category.includes(category)) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
