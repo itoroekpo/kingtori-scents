@@ -1390,7 +1390,7 @@
 <!-- CHECKOUT MODAL -->
 <div class="modal-overlay" id="checkoutModal">
   <div class="modal-box">
-    <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+    <button class="modal-close" id="modalClose" aria-label="Close">&amp;times;</button>
     <p class="modal-eyebrow">Secure Checkout</p>
     <h2 class="modal-title">Complete Your Order</h2>
     <p class="modal-product" id="modalProductName"></p>
@@ -1511,26 +1511,8 @@
         callback: function(response) {
           closeModal();
           // Send WhatsApp notification to store
-          var waMsg = encodeURIComponent(
-            'NEW ORDER RECEIVED!
-
-' +
-            'Product: ' + currentItem.name + '
-' +
-            'Amount: ' + currentItem.priceFormatted + '
-' +
-            'Customer: ' + firstName + ' ' + lastName + '
-' +
-            'Phone: ' + phone + '
-' +
-            'Email: ' + email + '
-' +
-            'Address: ' + address + '
-' +
-            'Notes: ' + (notes || 'None') + '
-' +
-            'Paystack Ref: ' + response.reference
-          );
+          var orderDetails = 'NEW ORDER RECEIVED! | Product: ' + currentItem.name + ' | Amount: ' + currentItem.priceFormatted + ' | Customer: ' + firstName + ' ' + lastName + ' | Phone: ' + phone + ' | Email: ' + email + ' | Address: ' + address + ' | Notes: ' + (notes || 'None') + ' | Paystack Ref: ' + response.reference;
+          var waMsg = encodeURIComponent(orderDetails);
           window.open('https://wa.me/' + WA_NUMBER + '?text=' + waMsg, '_blank');
           // Redirect to thank you page
           window.location.href = 'thankyou.html?ref=' + response.reference + '&name=' + encodeURIComponent(firstName) + '&product=' + encodeURIComponent(currentItem.name);
