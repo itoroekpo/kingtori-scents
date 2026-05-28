@@ -43,16 +43,109 @@
   .btn-primary:hover { background: var(--accent-dark); }
   .btn-ghost { font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--mid); text-decoration: none; padding-bottom: 2px; border-bottom: 1px solid var(--stone); transition: color 0.25s, border-color 0.25s; }
   .btn-ghost:hover { color: var(--dark); border-color: var(--dark); }
-  .hero-right { overflow: hidden; position: relative; }
+  .hero-right { overflow: hidden; position: relative; background: #0f0d0a; min-height: 600px; }
   .hero-visual { position: relative; width: 100%; height: 100%; min-height: 600px; }
-  .hero-bottle { position: absolute; inset: 0; }
-  .hero-bottle img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-  .hero-tag { position: absolute; bottom: 40px; left: 30px; background: rgba(255,255,255,0.92); backdrop-filter: blur(8px); padding: 16px 20px; border-left: 2px solid var(--accent); }
-  .hero-tag p:first-child { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--stone); margin-bottom: 4px; }
-  .hero-tag p:last-child { font-family: var(--serif); font-size: 18px; color: var(--dark); }
-  .hero-stat { position: absolute; top: 50px; right: 30px; text-align: right; background: rgba(255,255,255,0.85); backdrop-filter: blur(8px); padding: 12px 18px; }
-  .hero-stat .num { font-family: var(--serif); font-size: 48px; font-weight: 300; color: var(--dark); line-height: 1; }
-  .hero-stat .label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--stone); }
+
+  /* Radial glow background */
+  .hero-glow {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 70% at 60% 55%, rgba(196,169,125,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 80% 20%, rgba(158,126,80,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse 30% 30% at 20% 80%, rgba(196,169,125,0.07) 0%, transparent 60%);
+  }
+
+  /* Animated particles */
+  .hero-particles { position: absolute; inset: 0; overflow: hidden; }
+  .particle {
+    position: absolute; border-radius: 50%;
+    background: rgba(196,169,125,0.6);
+    animation: floatUp linear infinite;
+  }
+  @keyframes floatUp {
+    0%   { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+    10%  { opacity: 1; }
+    90%  { opacity: 0.4; }
+    100% { transform: translateY(-120vh) translateX(30px) scale(0.3); opacity: 0; }
+  }
+
+  /* Central bottle scene */
+  .hero-bottle-scene {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .hero-bottle-wrap {
+    position: relative; width: 220px;
+    filter: drop-shadow(0 0 60px rgba(196,169,125,0.35)) drop-shadow(0 20px 40px rgba(0,0,0,0.7));
+    animation: bottleFloat 6s ease-in-out infinite;
+  }
+  @keyframes bottleFloat {
+    0%, 100% { transform: translateY(0px); }
+    50%       { transform: translateY(-14px); }
+  }
+
+  /* Reflection under bottle */
+  .hero-reflection {
+    position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%);
+    width: 120px; height: 20px;
+    background: radial-gradient(ellipse, rgba(196,169,125,0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: reflectionPulse 6s ease-in-out infinite;
+  }
+  @keyframes reflectionPulse {
+    0%, 100% { opacity: 0.6; transform: translateX(-50%) scaleX(1); }
+    50%       { opacity: 1; transform: translateX(-50%) scaleX(1.15); }
+  }
+
+  /* Decorative rings */
+  .hero-ring {
+    position: absolute; border-radius: 50%; border: 1px solid rgba(196,169,125,0.15);
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    animation: ringPulse 4s ease-in-out infinite;
+  }
+  .hero-ring:nth-child(1) { width: 280px; height: 280px; animation-delay: 0s; }
+  .hero-ring:nth-child(2) { width: 400px; height: 400px; animation-delay: 0.8s; border-color: rgba(196,169,125,0.09); }
+  .hero-ring:nth-child(3) { width: 520px; height: 520px; animation-delay: 1.6s; border-color: rgba(196,169,125,0.05); }
+  @keyframes ringPulse {
+    0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+    50%       { opacity: 1; transform: translate(-50%, -50%) scale(1.04); }
+  }
+
+  /* Corner decorative lines */
+  .hero-corner {
+    position: absolute; width: 50px; height: 50px;
+  }
+  .hero-corner.tl { top: 24px; left: 24px; border-top: 1px solid rgba(196,169,125,0.4); border-left: 1px solid rgba(196,169,125,0.4); }
+  .hero-corner.tr { top: 24px; right: 24px; border-top: 1px solid rgba(196,169,125,0.4); border-right: 1px solid rgba(196,169,125,0.4); }
+  .hero-corner.bl { bottom: 24px; left: 24px; border-bottom: 1px solid rgba(196,169,125,0.4); border-left: 1px solid rgba(196,169,125,0.4); }
+  .hero-corner.br { bottom: 24px; right: 24px; border-bottom: 1px solid rgba(196,169,125,0.4); border-right: 1px solid rgba(196,169,125,0.4); }
+
+  /* Scent line decorations */
+  .hero-scent-lines {
+    position: absolute; top: 30%; left: 50%; transform: translateX(-50%);
+    display: flex; gap: 6px; opacity: 0.5;
+  }
+  .scent-line {
+    width: 1px; background: linear-gradient(to top, rgba(196,169,125,0.8), transparent);
+    animation: scentRise 3s ease-in-out infinite;
+  }
+  .scent-line:nth-child(1) { height: 40px; animation-delay: 0s; }
+  .scent-line:nth-child(2) { height: 60px; animation-delay: 0.4s; }
+  .scent-line:nth-child(3) { height: 45px; animation-delay: 0.8s; }
+  .scent-line:nth-child(4) { height: 55px; animation-delay: 1.2s; }
+  .scent-line:nth-child(5) { height: 38px; animation-delay: 1.6s; }
+  @keyframes scentRise {
+    0%, 100% { opacity: 0.3; transform: translateY(0) scaleX(1); }
+    50%       { opacity: 0.8; transform: translateY(-8px) scaleX(1.5); }
+  }
+
+  /* Info overlays */
+  .hero-tag { position: absolute; bottom: 40px; left: 30px; padding: 16px 20px; border-left: 2px solid var(--accent); background: rgba(15,13,10,0.7); backdrop-filter: blur(10px); }
+  .hero-tag p:first-child { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+  .hero-tag p:last-child { font-family: var(--serif); font-size: 18px; color: rgba(255,255,255,0.9); }
+  .hero-stat { position: absolute; top: 40px; right: 30px; text-align: right; background: rgba(15,13,10,0.7); backdrop-filter: blur(10px); padding: 12px 18px; border-right: 2px solid var(--accent); }
+  .hero-stat .num { font-family: var(--serif); font-size: 48px; font-weight: 300; color: var(--accent); line-height: 1; }
+  .hero-stat .label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
 
   section { padding: 100px 8vw; }
   .section-eyebrow { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent-dark); margin-bottom: 16px; }
@@ -202,14 +295,127 @@
   </div>
   <div class="hero-right">
     <div class="hero-visual">
-      <div class="hero-bottle">
-        <img src="https://lattafa.com/wp-content/uploads/2026/05/Waha-Packshot-3-scaled.jpg" alt="Lattafa Khamrah Waha" />
+
+      <!-- Background glow -->
+      <div class="hero-glow"></div>
+
+      <!-- Animated particles -->
+      <div class="hero-particles" id="heroParticles"></div>
+
+      <!-- Decorative rings -->
+      <div class="hero-ring"></div>
+      <div class="hero-ring"></div>
+      <div class="hero-ring"></div>
+
+      <!-- Corner brackets -->
+      <div class="hero-corner tl"></div>
+      <div class="hero-corner tr"></div>
+      <div class="hero-corner bl"></div>
+      <div class="hero-corner br"></div>
+
+      <!-- Bottle scene -->
+      <div class="hero-bottle-scene">
+        <div class="hero-bottle-wrap">
+          <!-- Scent lines above bottle -->
+          <div class="hero-scent-lines">
+            <div class="scent-line"></div>
+            <div class="scent-line"></div>
+            <div class="scent-line"></div>
+            <div class="scent-line"></div>
+            <div class="scent-line"></div>
+          </div>
+          <!-- Bottle SVG -->
+          <svg viewBox="0 0 220 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Cap -->
+            <rect x="82" y="4" width="56" height="10" rx="3" fill="url(#capGrad)"/>
+            <rect x="88" y="14" width="44" height="22" rx="3" fill="url(#capGrad)"/>
+            <!-- Neck -->
+            <rect x="92" y="36" width="36" height="18" rx="2" fill="url(#neckGrad)"/>
+            <!-- Shoulder -->
+            <path d="M68 66 Q68 54 110 54 Q152 54 152 66 L158 90 L62 90 Z" fill="url(#bodyGrad)"/>
+            <!-- Body -->
+            <rect x="62" y="90" width="96" height="196" rx="6" fill="url(#bodyGrad)"/>
+            <!-- Glass shine left -->
+            <rect x="70" y="100" width="8" height="170" rx="4" fill="rgba(255,255,255,0.06)"/>
+            <!-- Glass shine right -->
+            <rect x="142" y="100" width="5" height="170" rx="2.5" fill="rgba(255,255,255,0.04)"/>
+            <!-- Label area -->
+            <rect x="74" y="138" width="72" height="80" rx="2" fill="rgba(196,169,125,0.12)" stroke="rgba(196,169,125,0.3)" stroke-width="0.5"/>
+            <!-- Label top line -->
+            <line x1="80" y1="150" x2="140" y2="150" stroke="rgba(196,169,125,0.4)" stroke-width="0.5"/>
+            <!-- Label bottom line -->
+            <line x1="80" y1="208" x2="140" y2="208" stroke="rgba(196,169,125,0.4)" stroke-width="0.5"/>
+            <!-- Brand text -->
+            <text x="110" y="172" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="10" fill="rgba(196,169,125,0.9)" letter-spacing="3">KINGTORI</text>
+            <text x="110" y="188" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="7" fill="rgba(196,169,125,0.6)" letter-spacing="4">SCENTS</text>
+            <text x="110" y="202" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="6" fill="rgba(196,169,125,0.5)" letter-spacing="2" font-style="italic">Lagos</text>
+            <!-- Bottom reflection -->
+            <rect x="62" y="270" width="96" height="16" rx="0" fill="url(#reflectGrad)"/>
+            <!-- Liquid fill -->
+            <rect x="63" y="95" width="94" height="175" rx="5" fill="url(#liquidGrad)" opacity="0.5"/>
+            <!-- Defs -->
+            <defs>
+              <linearGradient id="capGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#8a6d3f"/>
+                <stop offset="40%" stop-color="#c4a97d"/>
+                <stop offset="100%" stop-color="#7a5d2f"/>
+              </linearGradient>
+              <linearGradient id="neckGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#3a2e1e"/>
+                <stop offset="50%" stop-color="#6b5535"/>
+                <stop offset="100%" stop-color="#2a2010"/>
+              </linearGradient>
+              <linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#1e1a12"/>
+                <stop offset="30%" stop-color="#2e2618"/>
+                <stop offset="70%" stop-color="#221e12"/>
+                <stop offset="100%" stop-color="#141008"/>
+              </linearGradient>
+              <linearGradient id="liquidGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#c4a97d" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#9e7e50" stop-opacity="0.1"/>
+              </linearGradient>
+              <linearGradient id="reflectGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="rgba(196,169,125,0.15)"/>
+                <stop offset="100%" stop-color="transparent"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
       </div>
+
+      <!-- Ground reflection -->
+      <div class="hero-reflection"></div>
+
+      <!-- Overlays -->
       <div class="hero-stat"><div class="num">50+</div><div class="label">Fragrances</div></div>
       <div class="hero-tag"><p>New Arrival</p><p>Khamrah Waha</p></div>
     </div>
   </div>
 </section>
+
+<script>
+  // Generate floating particles
+  (function() {
+    var container = document.getElementById('heroParticles');
+    if (!container) return;
+    for (var i = 0; i < 22; i++) {
+      var p = document.createElement('div');
+      p.className = 'particle';
+      var size = Math.random() * 3 + 1;
+      p.style.cssText = [
+        'width:' + size + 'px',
+        'height:' + size + 'px',
+        'left:' + (Math.random() * 100) + '%',
+        'bottom:' + (Math.random() * 20) + '%',
+        'animation-duration:' + (Math.random() * 10 + 8) + 's',
+        'animation-delay:' + (Math.random() * 10) + 's',
+        'opacity:0'
+      ].join(';');
+      container.appendChild(p);
+    }
+  })();
+</script>
 
 <!-- FEATURED FRAGRANCES -->
 <section id="fragrances">
