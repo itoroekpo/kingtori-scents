@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Refund Policy | KingTori Scents</title>
+<meta name="description" content="KingTori Scents refund and return policy. Learn about our 48-hour return window and how to request a refund." />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #FAF8F4; --off-white: #F3F0EA; --light-stone: #E8E2D8;
+    --stone: #B8B0A0; --dark: #1A1814; --mid: #6B6560;
+    --accent: #C4A97D; --accent-dark: #9E7E50; --white: #FFFFFF;
+    --serif: 'Cormorant Garamond', serif; --sans: 'DM Sans', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--sans); background: var(--cream); color: var(--dark); line-height: 1.7; }
+
+  /* NAV */
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5vw; height: 68px;
+    background: rgba(250,248,244,0.95);
+    border-bottom: 1px solid var(--light-stone);
+  }
+  .nav-logo { font-family: var(--serif); font-size: 22px; font-weight: 300; letter-spacing: 0.12em; color: var(--dark); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+  .nav-logo span { color: var(--accent-dark); font-style: italic; }
+  .nav-back { font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color 0.2s; }
+  .nav-back:hover { color: var(--dark); }
+
+  /* PAGE HERO */
+  .page-hero {
+    background: var(--dark); padding: 72px 8vw 56px;
+    text-align: center;
+  }
+  .page-eyebrow { font-size: 11px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+  .page-title { font-family: var(--serif); font-size: clamp(40px, 5vw, 64px); font-weight: 300; color: var(--white); line-height: 1.1; margin-bottom: 16px; }
+  .page-title em { font-style: italic; color: var(--accent); }
+  .page-date { font-size: 12px; color: rgba(255,255,255,0.35); letter-spacing: 0.12em; }
+
+  /* CONTENT */
+  .content { max-width: 760px; margin: 0 auto; padding: 64px 5vw 80px; }
+
+  .section { margin-bottom: 48px; }
+
+  .section-number {
+    font-family: var(--serif); font-size: 13px; color: var(--accent-dark);
+    letter-spacing: 0.15em; margin-bottom: 8px;
+  }
+  .section-title {
+    font-family: var(--serif); font-size: 26px; font-weight: 400;
+    color: var(--dark); margin-bottom: 16px; line-height: 1.2;
+  }
+  .section p {
+    font-size: 15px; color: var(--mid); line-height: 1.85; margin-bottom: 14px;
+  }
+  .section p:last-child { margin-bottom: 0; }
+
+  .divider { width: 40px; height: 1px; background: var(--accent); margin: 0 0 20px; }
+
+  /* Policy boxes */
+  .policy-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 2px; margin: 32px 0;
+  }
+  .policy-box {
+    background: var(--off-white); padding: 28px 24px;
+    border-left: 2px solid var(--accent);
+  }
+  .policy-box-icon { font-size: 24px; margin-bottom: 12px; }
+  .policy-box-title {
+    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--accent-dark); margin-bottom: 8px;
+  }
+  .policy-box-text { font-size: 14px; color: var(--mid); line-height: 1.7; }
+  .policy-box-value {
+    font-family: var(--serif); font-size: 22px; color: var(--dark);
+    margin-bottom: 6px;
+  }
+
+  /* Steps */
+  .steps { display: flex; flex-direction: column; gap: 2px; margin: 24px 0; }
+  .step {
+    display: flex; gap: 20px; align-items: flex-start;
+    background: var(--white); padding: 20px 24px;
+    border-left: 1px solid var(--light-stone);
+  }
+  .step-num {
+    font-family: var(--serif); font-size: 28px; font-weight: 300;
+    color: var(--accent); line-height: 1; flex-shrink: 0; width: 32px;
+  }
+  .step-text { font-size: 14px; color: var(--mid); line-height: 1.7; padding-top: 6px; }
+  .step-text strong { color: var(--dark); font-weight: 500; }
+
+  /* Contact box */
+  .contact-box {
+    background: var(--dark); padding: 36px 32px;
+    display: flex; gap: 24px; align-items: flex-start;
+    margin-top: 48px;
+  }
+  .contact-box-icon { font-size: 28px; flex-shrink: 0; }
+  .contact-box-title {
+    font-family: var(--serif); font-size: 22px; font-weight: 300;
+    color: var(--white); margin-bottom: 10px;
+  }
+  .contact-box-text { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 16px; }
+  .contact-links { display: flex; gap: 12px; flex-wrap: wrap; }
+  .contact-link {
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 9px 18px; text-decoration: none; transition: all 0.2s;
+  }
+  .contact-link.wa { background: #25D366; color: var(--white); }
+  .contact-link.wa:hover { background: #1da851; }
+  .contact-link.email { background: rgba(255,255,255,0.08); color: var(--white); border: 1px solid rgba(255,255,255,0.15); }
+  .contact-link.email:hover { background: rgba(255,255,255,0.15); }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark); color: rgba(255,255,255,0.4);
+    padding: 32px 5vw; text-align: center; font-size: 12px;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { color: var(--white); }
+
+  @media (max-width: 600px) {
+    .policy-grid { grid-template-columns: 1fr; }
+    .contact-box { flex-direction: column; gap: 16px; padding: 28px 20px; }
+    .content { padding: 48px 5vw 60px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg viewBox="0 0 36 29" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:20px;height:20px;flex-shrink:0;"><path d="M2 24 L2 10 L9 18 L18 3 L27 18 L34 10 L34 24 Z" fill="#C4A97D" opacity="0.25"/><path d="M2 24 L2 10 L9 18 L18 3 L27 18 L34 10 L34 24 Z" fill="none" stroke="#9E7E50" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><rect x="2" y="24" width="32" height="5" rx="2.5" fill="#9E7E50"/><circle cx="18" cy="3" r="2.5" fill="#9E7E50"/><circle cx="2" cy="10" r="2" fill="#9E7E50"/><circle cx="34" cy="10" r="2" fill="#9E7E50"/><circle cx="10" cy="19" r="1.5" fill="#9E7E50" opacity="0.6"/><circle cx="26" cy="19" r="1.5" fill="#9E7E50" opacity="0.6"/></svg>
+    KingTori <span>Scents</span>
+  </a>
+  <a href="index.html" class="nav-back">← Back to Store</a>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <p class="page-eyebrow">Customer Care</p>
+  <h1 class="page-title">Refund &amp; <em>Return</em> Policy</h1>
+  <p class="page-date">Effective Date: June 2025 &nbsp;·&nbsp; KingTori Scents, Lagos, Nigeria</p>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- Intro -->
+  <div class="section">
+    <p>At KingTori Scents, your satisfaction is our priority. We take great care to ensure every order is packed correctly and delivered in perfect condition. If something is not right, we want to make it right — quickly and fairly.</p>
+    <p>Please read our policy carefully before requesting a return or refund.</p>
+  </div>
+
+  <!-- Policy at a glance -->
+  <div class="policy-grid">
+    <div class="policy-box">
+      <div class="policy-box-icon">⏱️</div>
+      <p class="policy-box-title">Return Window</p>
+      <p class="policy-box-value">48 Hours</p>
+      <p class="policy-box-text">All return requests must be made within 48 hours of receiving your order.</p>
+    </div>
+    <div class="policy-box">
+      <div class="policy-box-icon">🔒</div>
+      <p class="policy-box-title">Condition</p>
+      <p class="policy-box-value">Sealed Only</p>
+      <p class="policy-box-text">We only accept returns on items that are factory sealed and completely unopened.</p>
+    </div>
+    <div class="policy-box">
+      <div class="policy-box-icon">✅</div>
+      <p class="policy-box-title">Eligible Returns</p>
+      <p class="policy-box-value">Wrong Item</p>
+      <p class="policy-box-text">Returns are accepted if you received the wrong item or a damaged product.</p>
+    </div>
+    <div class="policy-box">
+      <div class="policy-box-icon">🚚</div>
+      <p class="policy-box-title">Return Shipping</p>
+      <p class="policy-box-value">We Cover It</p>
+      <p class="policy-box-text">If the error is on our end, KingTori Scents covers the full cost of return shipping.</p>
+    </div>
+  </div>
+
+  <!-- Eligibility -->
+  <div class="section">
+    <p class="section-number">01</p>
+    <h2 class="section-title">Eligibility for Returns</h2>
+    <div class="divider"></div>
+    <p>To be eligible for a return or refund, the following conditions must be met:</p>
+    <p>The return request must be submitted <strong>within 48 hours</strong> of receiving your order. Requests made after this window will not be accepted.</p>
+    <p>The item must be <strong>factory sealed and completely unopened</strong>. Any product that has been opened, used, or tampered with is not eligible for return regardless of the reason.</p>
+    <p>Returns are accepted in the following cases only: you received the <strong>wrong fragrance</strong>, or the product arrived <strong>damaged</strong> due to packaging or transit.</p>
+    <p>Change of mind, dislike of scent, or ordering the wrong product are <strong>not eligible</strong> for a refund. We encourage customers to reach out via WhatsApp before ordering if they have any questions about a fragrance.</p>
+  </div>
+
+  <!-- How to request -->
+  <div class="section">
+    <p class="section-number">02</p>
+    <h2 class="section-title">How to Request a Return</h2>
+    <div class="divider"></div>
+    <p>Follow these steps to initiate a return:</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-text"><strong>Contact us within 48 hours</strong> of receiving your order via WhatsApp at +234 706 344 5321 or email at kingtorigroup@gmail.com.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-text"><strong>Provide your order details</strong> — your full name, Paystack payment reference, and a clear photo or video showing the issue (wrong item or damage).</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-text"><strong>Await confirmation</strong> — our team will review your request and respond within 24 hours with next steps.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-text"><strong>Return the item</strong> — if approved, we will arrange pickup or provide a return address. The item must be in its original sealed packaging.</div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-text"><strong>Refund or replacement</strong> — once we receive and inspect the item, your refund will be processed within <strong>3–5 business days</strong>, or we will dispatch the correct item immediately.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Refunds -->
+  <div class="section">
+    <p class="section-number">03</p>
+    <h2 class="section-title">Refund Processing</h2>
+    <div class="divider"></div>
+    <p>Approved refunds will be processed within <strong>3–5 business days</strong> after we receive and inspect the returned item.</p>
+    <p>Refunds will be issued to the original payment method used at checkout. If payment was made via bank transfer, the refund will be made to the same bank account.</p>
+    <p>KingTori Scents reserves the right to reject a return if the item does not meet the eligibility criteria stated above.</p>
+  </div>
+
+  <!-- Shipping -->
+  <div class="section">
+    <p class="section-number">04</p>
+    <h2 class="section-title">Return Shipping Costs</h2>
+    <div class="divider"></div>
+    <p>If you received the <strong>wrong item</strong> or a <strong>damaged product</strong> due to our error, KingTori Scents will cover the full cost of return shipping. We will arrange pickup directly from your delivery address.</p>
+    <p>For any other approved return scenario, the customer is responsible for return shipping costs.</p>
+  </div>
+
+  <!-- Non-returnable -->
+  <div class="section">
+    <p class="section-number">05</p>
+    <h2 class="section-title">Non-Returnable Items</h2>
+    <div class="divider"></div>
+    <p>The following items cannot be returned under any circumstances:</p>
+    <p>— Opened or used fragrances, regardless of the amount used.</p>
+    <p>— Items returned after the 48-hour window has elapsed.</p>
+    <p>— Items purchased during a sale or promotional event, unless damaged or incorrect.</p>
+    <p>— Gift sets that have been partially opened or used.</p>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-box">
+    <div class="contact-box-icon">💬</div>
+    <div>
+      <p class="contact-box-title">Have a question about your order?</p>
+      <p class="contact-box-text">Our team is available to help. Reach out via WhatsApp for the fastest response — we typically reply within the hour.</p>
+      <div class="contact-links">
+        <a href="https://wa.me/2347063445321" target="_blank" rel="noopener noreferrer" class="contact-link wa">WhatsApp Us</a>
+        <a href="mailto:kingtorigroup@gmail.com" class="contact-link email">Email Us</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 KingTori Scents · Lagos, Nigeria · <a href="index.html">Back to Store</a></p>
+</footer>
+
+</body>
+</html>
